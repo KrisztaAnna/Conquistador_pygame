@@ -4,6 +4,12 @@ import time
 from player import Player
 
 
+class DrawGameField(object):
+
+    def __init__(self):
+        pass
+
+
 class Tile():
 
     def __init__(self, x, y, owner):
