@@ -2,6 +2,18 @@ import pygame
 from event import Event
 
 
+class Grid(object):
+
+    def __init__(self):
+        pass
+
+
+class Sidebar(object):
+
+    def __init__(self, main):
+        print(main.height)
+
+
 class Main(object):
 
     def __init__(self):
@@ -20,6 +32,7 @@ class Main(object):
             for event in pygame.event.get():
                 Event.system_event_handler(event)
 
+
 class State(object):
 
     def __init__(self):
@@ -27,7 +40,7 @@ class State(object):
         self.game = Game()
         self.endscreen = Endscreen()
 
-        self.game_state = self.menu
+        self.game_state = self.game
 
     def start_game(self):
         self.game_state = self.game
@@ -39,24 +52,30 @@ class State(object):
         self.game_state = self.menu
 
 
-class Menu(object):
+class Menu(Main):
 
     def __init__(self):
         pass
 
 
-class Game(object):
+class Game(Main):
+
+    def __init__(self):
+        super().__init__()
+        self.grid = Grid()
+        self.side_bar = Sidebar()
+
+
+
+class Endscreen(Main):
 
     def __init__(self):
         pass
 
 
-class Endscreen(object):
 
-    def __init__(self):
-        pass
 
 
 if __name__ == "__main__":
-    main = Main()
-    main.main_loop()
+    state = State()
+    # state.main_loop()
