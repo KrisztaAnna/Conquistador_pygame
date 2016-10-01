@@ -13,8 +13,8 @@ class Main:
     def __init__(self, width=1000, height=600):
         pygame.init()
         pygame.display.set_caption('Conquistador')
-        pygame.mixer.music.load('mountain_king.wav')
-        pygame.mixer.music.play(loops=1, start=0.0)
+        # pygame.mixer.music.load('mountain_king.wav')
+        # pygame.mixer.music.play(loops=1, start=0.0)
         self.width = width
         self.height = height
         self.screen = pygame.display.set_mode((self.width, self.height), pygame.FULLSCREEN)

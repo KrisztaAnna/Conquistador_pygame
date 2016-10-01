@@ -1,5 +1,4 @@
 import pygame
-# from player import Player
 
 
 class Event(object):
@@ -7,8 +6,7 @@ class Event(object):
     @staticmethod
     def system_event_handler(event):
         if event.type == pygame.QUIT:
-            return True
-        return False
+            pygame.quit()
 
     # @staticmethod
     # def player_event_handler(event, player_1, player_2):
@@ -33,7 +31,7 @@ class Event(object):
     #             player_2.move('down')
     #
     #     return player_1, player_2
-    #
+
     # @staticmethod
     # def tile_event_handler(player, net):
     #     net[player.x][player.y].update_owner(player)

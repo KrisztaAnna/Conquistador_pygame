@@ -1,15 +1,24 @@
 import pygame
+from event import Event
 
 
 class Main(object):
 
     def __init__(self):
+        pygame.init()
+        pygame.display.set_caption('Conquistador')
+        self.width = 1024
+        self.height = 768
+        self.screen = pygame.display.set_mode((self.width, self.height))  # , pygame.FULLSCREEN)
+        self.screen.fill((0, 0, 0))
+
         conquiztador = State()
 
     def main_loop(self):
+        print("Entering main loop...")
         while True:
-            print("megy a játék")
-
+            for event in pygame.event.get():
+                Event.system_event_handler(event)
 
 class State(object):
 
